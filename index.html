@@ -14,12 +14,14 @@
             <button onclick="shuffleCards()">Shuffle</button>
         </div>
         <div class="flashcard" onclick="flipCard()">
-            <div id="cardText">Click to Start</div>
+            <div class="card-inner" id="cardInner">
+                <div class="card-face front" id="cardFront">Click to Start</div>
+                <div class="card-face back" id="cardBack"></div>
+            </div>
         </div>
         <div class="navigation">
             <button onclick="prevCard()">Previous</button>
             <button onclick="nextCard()">Next</button>
-            <text>Click Card to flip to see answer</text>
         </div>
     </div>
     <script src="script.js"></script>

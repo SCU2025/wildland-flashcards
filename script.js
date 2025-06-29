@@ -35,37 +35,38 @@ const cards = {
 
 let currentSet = [];
 let currentIndex = 0;
-let showingBack = false;
+let isFlipped = false;
 
 function loadSet(setName) {
     currentSet = cards[setName];
     currentIndex = 0;
-    showingBack = false;
-    updateCardText();
+    isFlipped = false;
+    updateCard();
 }
 
 function flipCard() {
-    showingBack = !showingBack;
-    updateCardText();
+    isFlipped = !isFlipped;
+    document.getElementById("cardInner").classList.toggle("flipped", isFlipped);
 }
 
-function updateCardText() {
+function updateCard() {
     const card = currentSet[currentIndex];
-    document.getElementById("cardText").textContent = showingBack ? card.back : card.front;
+    document.getElementById("cardFront").textContent = card.front;
+    document.getElementById("cardBack").textContent = card.back;
+    document.getElementById("cardInner").classList.remove("flipped");
+    isFlipped = false;
 }
 
 function nextCard() {
     if (currentSet.length === 0) return;
     currentIndex = (currentIndex + 1) % currentSet.length;
-    showingBack = false;
-    updateCardText();
+    updateCard();
 }
 
 function prevCard() {
     if (currentSet.length === 0) return;
     currentIndex = (currentIndex - 1 + currentSet.length) % currentSet.length;
-    showingBack = false;
-    updateCardText();
+    updateCard();
 }
 
 function shuffleCards() {
@@ -74,6 +75,5 @@ function shuffleCards() {
         [currentSet[i], currentSet[j]] = [currentSet[j], currentSet[i]];
     }
     currentIndex = 0;
-    showingBack = false;
-    updateCardText();
+    updateCard();
 }
