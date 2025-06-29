@@ -104,3 +104,19 @@ function resetApp() {
     localStorage.clear();
     location.reload();
 }
+let deferredPrompt;
+
+window.addEventListener("beforeinstallprompt", (e) => {
+    e.preventDefault();
+    deferredPrompt = e;
+    const saveBtn = document.getElementById("saveAppBtn");
+    if (saveBtn) saveBtn.style.display = "inline-block";
+
+    saveBtn.addEventListener("click", () => {
+        saveBtn.style.display = "none";
+        deferredPrompt.prompt();
+        deferredPrompt.userChoice.then((choiceResult) => {
+            deferredPrompt = null;
+        });
+    });
+});
