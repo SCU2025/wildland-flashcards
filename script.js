@@ -3,144 +3,144 @@ const cards = {
     {
         "front": "SO 1",
         "back": "Keep informed on fire weather conditions and forecasts.",
-        "image": "https://raw.githubusercontent.com/SCU2025/wildland-flashcards/main/so1.png"
+        "image": "./SO1.PNG"
     },
     {
         "front": "SO 2",
         "back": "Know what your fire is doing at all times.",
-        "image": "https://raw.githubusercontent.com/SCU2025/wildland-flashcards/main/so2.png"
+        "image": "./SO2.PNG"
     },
     {
         "front": "SO 3",
         "back": "Base all actions on current and expected fire behavior.",
-        "image": "https://raw.githubusercontent.com/SCU2025/wildland-flashcards/main/so3.png"
+        "image": "./SO3.PNG"
     },
     {
         "front": "SO 4",
         "back": "Identify escape routes and safety zones and make them known.",
-        "image": "https://raw.githubusercontent.com/SCU2025/wildland-flashcards/main/so4.png"
+        "image": "./SO4.PNG"
     },
     {
         "front": "SO 5",
         "back": "Post lookouts when there is possible danger.",
-        "image": "https://raw.githubusercontent.com/SCU2025/wildland-flashcards/main/so5.png"
+        "image": "./SO5.PNG"
     },
     {
         "front": "SO 6",
         "back": "Be alert, keep calm, think clearly, act decisively.",
-        "image": "https://raw.githubusercontent.com/SCU2025/wildland-flashcards/main/so6.png"
+        "image": "./SO6.PNG"
     },
     {
         "front": "SO 7",
         "back": "Maintain prompt communications with your forces, your supervisor, and adjoining forces.",
-        "image": "https://raw.githubusercontent.com/SCU2025/wildland-flashcards/main/so7.png"
+        "image": "./SO7.PNG"
     },
     {
         "front": "SO 8",
         "back": "Give clear instructions and ensure they are understood.",
-        "image": "https://raw.githubusercontent.com/SCU2025/wildland-flashcards/main/so8.png"
+        "image": "./SO8.PNG"
     },
     {
         "front": "SO 9",
         "back": "Maintain control of your forces at all times.",
-        "image": "https://raw.githubusercontent.com/SCU2025/wildland-flashcards/main/so9.png"
+        "image": "./SO9.PNG"
     },
     {
         "front": "SO 10",
         "back": "Fight fire aggressively, having provided for safety first.",
-        "image": "https://raw.githubusercontent.com/SCU2025/wildland-flashcards/main/so10.png"
+        "image": "./SO10.PNG"
     }
 ],
     "18s": [
     {
         "front": "WO 1",
         "back": "Fire not scouted and sized up.",
-        "image": "https://raw.githubusercontent.com/SCU2025/wildland-flashcards/main/wo1.png"
+        "image": "./WO1.PNG"
     },
     {
         "front": "WO 2",
         "back": "In country not seen in daylight.",
-        "image": "https://raw.githubusercontent.com/SCU2025/wildland-flashcards/main/wo2.png"
+        "image": "./WO2.PNG"
     },
     {
         "front": "WO 3",
         "back": "Safety zones and escape routes not identified.",
-        "image": "https://raw.githubusercontent.com/SCU2025/wildland-flashcards/main/wo3.png"
+        "image": "./WO3.PNG"
     },
     {
         "front": "WO 4",
         "back": "Unfamiliar with weather and local factors influencing fire behavior.",
-        "image": "https://raw.githubusercontent.com/SCU2025/wildland-flashcards/main/wo4.png"
+        "image": "./WO4.PNG"
     },
     {
         "front": "WO 5",
         "back": "Uninformed on strategy, tactics, and hazards.",
-        "image": "https://raw.githubusercontent.com/SCU2025/wildland-flashcards/main/wo5.png"
+        "image": "./WO5.PNG"
     },
     {
         "front": "WO 6",
         "back": "Instructions and assignments not clear.",
-        "image": "https://raw.githubusercontent.com/SCU2025/wildland-flashcards/main/wo6.png"
+        "image": "./WO6.PNG"
     },
     {
         "front": "WO 7",
         "back": "No communication link with crew members or supervisor.",
-        "image": "https://raw.githubusercontent.com/SCU2025/wildland-flashcards/main/wo7.png"
+        "image": "./WO7.PNG"
     },
     {
         "front": "WO 8",
         "back": "Constructing line without safe anchor point.",
-        "image": "https://raw.githubusercontent.com/SCU2025/wildland-flashcards/main/wo8.png"
+        "image": "./WO8.PNG"
     },
     {
         "front": "WO 9",
         "back": "Building fireline downhill with fire below.",
-        "image": "https://raw.githubusercontent.com/SCU2025/wildland-flashcards/main/wo9.png"
+        "image": "./WO9.PNG"
     },
     {
         "front": "WO 10",
         "back": "Attempting frontal assault on fire.",
-        "image": "https://raw.githubusercontent.com/SCU2025/wildland-flashcards/main/wo10.png"
+        "image": "./WO10.PNG"
     },
     {
         "front": "WO 11",
         "back": "Unburned fuel between you and the fire.",
-        "image": "https://raw.githubusercontent.com/SCU2025/wildland-flashcards/main/wo11.png"
+        "image": "./WO11.PNG"
     },
     {
         "front": "WO 12",
         "back": "Cannot see main fire, not in contact with someone who can.",
-        "image": "https://raw.githubusercontent.com/SCU2025/wildland-flashcards/main/wo12.png"
+        "image": "./WO12.PNG"
     },
     {
         "front": "WO 13",
         "back": "On a hillside where rolling material can ignite fuel below.",
-        "image": "https://raw.githubusercontent.com/SCU2025/wildland-flashcards/main/wo13.png"
+        "image": "./WO13.PNG"
     },
     {
         "front": "WO 14",
         "back": "Weather is getting hotter and drier.",
-        "image": "https://raw.githubusercontent.com/SCU2025/wildland-flashcards/main/wo14.png"
+        "image": "./WO14.PNG"
     },
     {
         "front": "WO 15",
         "back": "Wind increases and/or changes direction.",
-        "image": "https://raw.githubusercontent.com/SCU2025/wildland-flashcards/main/wo15.png"
+        "image": "./WO15.PNG"
     },
     {
         "front": "WO 16",
         "back": "Getting frequent spot fires across the line.",
-        "image": "https://raw.githubusercontent.com/SCU2025/wildland-flashcards/main/wo16.png"
+        "image": "./WO16.PNG"
     },
     {
         "front": "WO 17",
         "back": "Terrain and fuels make escape to safety zones difficult.",
-        "image": "https://raw.githubusercontent.com/SCU2025/wildland-flashcards/main/wo17.png"
+        "image": "./WO17.PNG"
     },
     {
         "front": "WO 18",
         "back": "Taking a nap near the fire line.",
-        "image": "https://raw.githubusercontent.com/SCU2025/wildland-flashcards/main/wo18.png"
+        "image": "./WO18.PNG"
     }
 ]
 };
