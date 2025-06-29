@@ -1,36 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Wildland Fire Flashcards</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
     <img src="flashcardtitleimage.jpg" alt="Flashcard Header" class="header-image">
     <div class="container">
-        <h1>🔥 Wildland Fire Flashcards</h1>
-        <div class="controls">
+        <div class="buttons">
             <button onclick="loadSet('10s')">10 Standard Orders</button>
-            <button onclick="loadSet('18s')">18 Watch Out Situations</button>
+            <button onclick="loadSet('18s')">18 Watch Outs</button>
             <button onclick="shuffleCards()">Shuffle</button>
-                    </div>
+        </div>
         <div class="flashcard" onclick="flipCard()">
             <div class="card-inner" id="cardInner">
                 <div class="card-face front" id="cardFront">Click to Start</div>
                 <div class="card-face back" id="cardBack">Pick an option above</div>
-                <div class="card-face back" id="cardBack"></div>
             </div>
         </div>
         <div class="navigation">
             <button onclick="prevCard()">Previous</button>
             <button onclick="nextCard()">Next</button>
         </div>
-    
-<div class="footer">
-    Created by Kevin Johns for Bray Creek Forestry and all new wildland firefighters
-</div>
-
-            <button class="reset-button" onclick="resetApp()">Reset</button>
+        <div class="footer">
+            Created by Kevin Johns for Bray Creek Forestry and all new wildland firefighters
+        </div>
+        <button class="reset-button" onclick="resetApp()">Reset</button>
     </div>
     <script src="script.js"></script>
 </body>
