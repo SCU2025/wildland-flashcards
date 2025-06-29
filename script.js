@@ -156,17 +156,22 @@ function loadSet(setName) {
     updateCard();
 }
 
+
 function flipCard() {
     isFlipped = !isFlipped;
     document.getElementById("cardInner").classList.toggle("flipped", isFlipped);
 }
 
+
+
 function updateCard() {
     const card = currentSet[currentIndex];
-    document.getElementById("cardFront").textContent = card.front;
-
+    const frontElem = document.getElementById("cardFront");
     const backElem = document.getElementById("cardBack");
+
+    frontElem.textContent = card.front;
     backElem.innerHTML = "";
+
     const text = document.createElement("div");
     text.textContent = card.back;
     backElem.appendChild(text);
@@ -181,6 +186,11 @@ function updateCard() {
         img.style.objectFit = "contain";
         backElem.appendChild(img);
     }
+
+    document.getElementById("cardInner").classList.remove("flipped");
+    isFlipped = false;
+}
+
 
     document.getElementById("cardInner").classList.remove("flipped");
     isFlipped = false;
