@@ -198,6 +198,103 @@ function prevCard() {
     updateCard();
 }
 
+let quizMode = false;
+let quizScore = 0;
+let quizAnswered = false;
+let missedCards = [];
+
+function startQuiz() {
+    shuffleCards();
+    quizMode = true;
+    quizScore = 0;
+    quizAnswered = false;
+    missedCards = [];
+    alert("Quiz started! Tap a card to see the answer and track your score.");
+}
+
+function flipCard() {
+    if (quizMode && !quizAnswered) {
+        document.getElementById("cardInner").classList.toggle("flipped", true);
+        quizAnswered = true;
+        const userCorrect = confirm("Did you get it right?");
+        if (userCorrect) {
+            quizScore++;
+        } else {
+            missedCards.push(currentSet[currentIndex]);
+        }
+        alert(`Score: ${quizScore} / ${currentIndex + 1}`);
+    } else if (!quizMode) {
+        isFlipped = !isFlipped;
+        document.getElementById("cardInner").classList.toggle("flipped", isFlipped);
+    }
+}
+
+function nextCard() {
+    if (currentSet.length === 0) return;
+    currentIndex = (currentIndex + 1) % currentSet.length;
+    quizAnswered = false;
+
+    if (quizMode && currentIndex === 0) {
+        quizMode = false;
+        let result = `Quiz Complete!\nFinal Score: ${quizScore} / ${currentSet.length}`;
+        if (missedCards.length > 0) {
+            result += `\nYou missed ${missedCards.length} cards. Review them now?`;
+            if (confirm(result)) {
+                currentSet = missedCards;
+                currentIndex = 0;
+                updateCard();
+                quizMode = false;
+                return;
+            }
+        } else {
+            alert(result + "\nGreat job!");
+        }
+    }
+
+    updateCard();
+}
+let quizScore = 0;
+let quizAnswered = false;
+
+function startQuiz() {
+    shuffleCards();
+    quizMode = true;
+    quizScore = 0;
+    quizAnswered = false;
+    alert("Quiz started! Tap a card to see the answer and track your score.");
+}
+
+function flipCard() {
+    if (quizMode && !quizAnswered) {
+        document.getElementById("cardInner").classList.toggle("flipped", true);
+        quizAnswered = true;
+        const userCorrect = confirm("Did you get it right?");
+        if (userCorrect) quizScore++;
+        alert(`Score: ${quizScore} / ${currentIndex + 1}`);
+    } else if (!quizMode) {
+        isFlipped = !isFlipped;
+        document.getElementById("cardInner").classList.toggle("flipped", isFlipped);
+    }
+}
+
+function nextCard() {
+    if (currentSet.length === 0) return;
+    currentIndex = (currentIndex + 1) % currentSet.length;
+    if (quizMode && currentIndex === 0) {
+        alert(`Quiz Complete! Final Score: ${quizScore} / ${currentSet.length}`);
+        quizMode = false;
+    }
+    quizAnswered = false;
+    updateCard();
+}
+
+function prevCard() {
+    if (currentSet.length === 0) return;
+    currentIndex = (currentIndex - 1 + currentSet.length) % currentSet.length;
+    quizAnswered = false;
+    updateCard();
+}
+
 function shuffleCards() {
     for (let i = currentSet.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
