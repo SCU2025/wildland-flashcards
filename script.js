@@ -21,7 +21,7 @@ const cards = {
         { front: "WO 7", back: "No communication link with crew members or supervisor." },
         { front: "WO 8", back: "Constructing line without safe anchor point." },
         { front: "WO 9", back: "Building fireline downhill with fire below." },
-        { front: "WO 10", back: "Attempting frontal assault on fire." },
+        { front: "WO 10", back: "Attempting frontal assault on fire.", image: "https://raw.githubusercontent.com/SCU2025/wildland-flashcards/main/wo10.png" },
         { front: "WO 11", back: "Unburned fuel between you and the fire." },
         { front: "WO 12", back: "Cannot see main fire, not in contact with someone who can." },
         { front: "WO 13", back: "On a hillside where rolling material can ignite fuel below." },
@@ -52,7 +52,22 @@ function flipCard() {
 function updateCard() {
     const card = currentSet[currentIndex];
     document.getElementById("cardFront").textContent = card.front;
-    document.getElementById("cardBack").textContent = card.back;
+
+    const backElem = document.getElementById("cardBack");
+    backElem.innerHTML = "";
+    const text = document.createElement("div");
+    text.textContent = card.back;
+    backElem.appendChild(text);
+
+    if (card.image) {
+        const img = document.createElement("img");
+        img.src = card.image;
+        img.alt = "WO 10 Illustration";
+        img.style.maxWidth = "100%";
+        img.style.marginTop = "10px";
+        backElem.appendChild(img);
+    }
+
     document.getElementById("cardInner").classList.remove("flipped");
     isFlipped = false;
 }
