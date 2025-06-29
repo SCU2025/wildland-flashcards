@@ -235,6 +235,100 @@ function showQuizQuestion() {
 
     currentQuestion = quizQuestions[currentIndex];
     const choices = generateChoices(currentQuestion, quizQuestions);
+
+    const frontElem = document.getElementById("cardFront");
+    const backElem = document.getElementById("cardBack");
+
+    document.getElementById("cardInner").classList.remove("flipped");
+
+    // Display question with multiple choices
+    frontElem.innerHTML = `<div style='font-weight:bold; margin-bottom: 10px;'>${currentQuestion.front}</div>`;
+    choices.forEach((choice) => {
+        const btn = document.createElement("button");
+        btn.textContent = choice;
+        btn.style.margin = "5px";
+        btn.style.padding = "10px";
+        btn.style.fontSize = "14px";
+        btn.onclick = () => checkQuizAnswer(choice);
+        frontElem.appendChild(btn);
+    });
+
+    // Clear back face until user answers
+    backElem.innerHTML = `<div style='font-size: 16px; color: #555;'>Tap an answer to see if it's correct</div>`;
+}
+
+function checkQuizAnswer(selected) {
+    const correct = currentQuestion.back;
+    const backElem = document.getElementById("cardBack");
+
+    backElem.innerHTML = `<div style="font-size: 16px;"><strong>Correct Answer:</strong><br>${correct}</div>`;
+
+    if (selected === correct) {
+        quizScore++;
+    } else {
+        missedCards.push(currentQuestion);
+    }
+
+    document.getElementById("cardInner").classList.add("flipped");
+
+    setTimeout(() => {
+        currentIndex++;
+        showQuizQuestion();
+    }, 2500);
+}
+
+function generateChoices(correctCard, allCards) {
+    const choices = [correctCard.back];
+    while (choices.length < 4) {
+        const rand = allCards[Math.floor(Math.random() * allCards.length)].back;
+        if (!choices.includes(rand)) choices.push(rand);
+    }
+    return shuffleArray(choices);
+}
+
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+}
+let quizScore = 0;
+let quizAnswered = false;
+let missedCards = [];
+let quizQuestions = [];
+let currentQuestion = null;
+
+function startQuiz() {
+    quizQuestions = [...cards["10s"], ...cards["18s"]];
+    shuffleArray(quizQuestions);
+    quizMode = true;
+    quizScore = 0;
+    missedCards = [];
+    currentIndex = 0;
+    showQuizQuestion();
+}
+
+function showQuizQuestion() {
+    if (currentIndex >= quizQuestions.length) {
+        quizMode = false;
+        let result = `Quiz Complete!\nFinal Score: ${quizScore} / ${quizQuestions.length}`;
+        if (missedCards.length > 0) {
+            result += `\nYou missed ${missedCards.length} cards. Review them now?`;
+            if (confirm(result)) {
+                currentSet = missedCards;
+                currentIndex = 0;
+                updateCard();
+                return;
+            }
+        } else {
+            alert(result + "\nGreat job!");
+        }
+        return;
+    }
+
+    currentQuestion = quizQuestions[currentIndex];
+    const choices = generateChoices(currentQuestion, quizQuestions);
     const frontElem = document.getElementById("cardFront");
     const backElem = document.getElementById("cardBack");
 
@@ -388,4 +482,9 @@ function shuffleCards() {
     }
     currentIndex = 0;
     updateCard();
+}
+
+function resetApp() {
+    localStorage.clear();
+    location.reload();
 }
