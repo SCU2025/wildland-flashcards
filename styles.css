@@ -119,3 +119,10 @@ img {
 .reset-button:hover {
     background-color: #555;
 }
+
+.header-image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto 20px auto;
+}
