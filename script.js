@@ -176,16 +176,21 @@ function updateCard() {
     text.textContent = card.back;
     backElem.appendChild(text);
 
-    if (card.image) {
-        const img = document.createElement("img");
-        img.src = card.image;
-        img.alt = card.front + " illustration";
-        img.style.maxWidth = "100%";
-        img.style.maxHeight = "100%";
-        img.style.marginTop = "10px";
-        img.style.objectFit = "contain";
-        backElem.appendChild(img);
-    }
+    
+if (card.image) {
+    const img = document.createElement("img");
+    img.src = card.image;
+    img.onerror = function() {
+        this.src = "https://via.placeholder.com/300x150?text=Image+Unavailable";
+    };
+    img.alt = card.front + " illustration";
+    img.style.maxWidth = "100%";
+    img.style.maxHeight = "100%";
+    img.style.marginTop = "10px";
+    img.style.objectFit = "contain";
+    backElem.appendChild(img);
+}
+
 
     document.getElementById("cardInner").classList.remove("flipped");
     isFlipped = false;
